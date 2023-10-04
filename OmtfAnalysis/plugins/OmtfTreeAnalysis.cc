@@ -138,7 +138,7 @@ void OmtfTreeAnalysis::analyze(const edm::Event&, const edm::EventSetup& es)
   //
   unsigned int lastRun = 0;
   for (int ev=0; ev<nentries; ev++) {
-
+//    if(ev>=1000) continue;
     chain.GetEntry(ev);
 //    std::cout <<"---------------------------------------#"<<ev<<", event: "<< *event << std::endl;
 
@@ -177,19 +177,34 @@ void OmtfTreeAnalysis::analyze(const edm::Event&, const edm::EventSetup& es)
 //
 // debug
 //
-/*
-    if (muonColl) std::cout << *muonColl << std::endl;
-    if (l1ObjColl)  std::cout << *l1ObjColl << std::endl; 
-    if ( muon.isValid() ) std::cout <<" muon: " << muon << std::endl; 
-    theAnaDataEmul->debug = true; 
-    if (!muon.isValid()) continue;
-    if (!muon.isValid() ||  muon.pt() < 300 || muon.pt() > 400 ) continue;
-//    theAnaMenu->debug=true;
-//    theAnaEff->debug=true;
-//    theAnaMenu->filter(event, &muon, bitsL1, bitsHLT);
-    theAnaMenu->debug=false;
-    theAnaEff->debug=false;
-*/
+//    if (event)  {
+//      std::cout<<"Tutaj jest event"<<std::endl;
+//      std::cout << *event << std::endl;
+//      std::cout<<"//////////////////"<<std::endl;
+//    }
+//
+//    if (muonColl) {
+//      std::cout<<"Tutaj jest muonColl"<<std::endl;
+//      std::cout << *muonColl << std::endl;
+//      std::cout<<"//////////////////"<<std::endl;
+//
+//    }
+//    if (l1ObjColl) {
+//      std::cout<<"Tutaj jest l1ObjColl"<<std::endl;
+//      std::cout << *l1ObjColl << std::endl;
+//      std::cout<<"//////////////////"<<std::endl;
+//    }
+
+  //  if ( muon.isValid() ) std::cout <<" muon: " << muon << std::endl;
+//    theAnaDataEmul->debug = true;
+//    if (!muon.isValid()) continue;
+//    if (!muon.isValid() ||  muon.pt() < 300 || muon.pt() > 400 ) continue;
+////    theAnaMenu->debug=true;
+////    theAnaEff->debug=true;
+////    theAnaMenu->filter(event, &muon, bitsL1, bitsHLT);
+//    theAnaMenu->debug=false;
+//    theAnaEff->debug=false;
+
 //    if (theAnaDataEmul) theAnaDataEmul->debug = true; 
 
     //

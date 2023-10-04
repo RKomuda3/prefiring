@@ -20,15 +20,15 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run3_data', '')
 process.omtfAnalysis = cms.EDAnalyzer("OmtfTreeAnalysis",
   histoFileName = cms.string("omtfAnalysis.root"),
   treeFileNames = cms.vstring(
-        "omtfTree.root"
+#        "omtfTree.root"
 #  "../jobs/Run2023B_JetMET/crab_JetMET0_jobVer3/omtfTree.root",
 #  "../jobs/Run2023B_JetMET/crab_JetMET1_jobVer3/omtfTree.root",
 #  "../jobs/Run2023C_JetMET/crab_JetMET0_jobVer3/omtfTree.root",
 #  "../jobs/Run2023C_JetMET/crab_JetMET1_jobVer3/omtfTree.root",
-#   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023B_Muon/crab_Muon0_jobVer3/omtfTree.root",
-#   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023B_Muon/crab_Muon1_jobVer3/omtfTree.root",
-#   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023C_Muon/crab_Muon0_jobVer3/omtfTree.root",
-#   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023C_Muon/crab_Muon1_jobVer3/omtfTree.root",
+   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023B_Muon/crab_Muon0_jobVer3/omtfTree.root",
+   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023B_Muon/crab_Muon1_jobVer3/omtfTree.root",
+   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023C_Muon/crab_Muon0_jobVer3/omtfTree.root",
+   "/afs/cern.ch/work/k/konec/CMSSW_13_1_0.ana/src/UserCode/OmtfAnalysis/jobs/Run2023C_Muon/crab_Muon1_jobVer3/omtfTree.root",
   ),
   filterByAnaEvent = cms.bool(True),
   anaEvent = cms.PSet(

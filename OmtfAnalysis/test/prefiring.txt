@@ -1,0 +1,444 @@
+ OmtfTreeAnalysis::beginRun called
+ INITIALISING READOUT MAP, version: 09/11/2012_16:27:08
+Begin processing the 1st record. Run 1, Event 1, LumiSection 1 on stream 0 at 04-Oct-2023 16:38:57.829 CEST
+ ENTRIES: 5010588
+RUN: 366727 event:       0 done:  0.00%
+RUN: 366801 event:    3002 done:  0.06%
+RUN: 366802 event:    3205 done:  0.06%
+RUN: 366804 event:    3798 done:  0.08%
+RUN: 366820 event:    7055 done:  0.14%
+RUN: 366821 event:   18227 done:  0.36%
+RUN: 366727 event:   31770 done:  0.63%
+RUN: 366729 event:   32042 done:  0.64%
+RUN: 366821 event:   35132 done:  0.70%
+RUN: 366829 event:   49510 done:  0.99%
+RUN: 366829 event:   50105 done:  1.00%
+RUN: 366832 event:   55444 done:  1.11%
+RUN: 366833 event:   64060 done:  1.28%
+RUN: 366729 event:   65745 done:  1.31%
+RUN: 366833 event:   69091 done:  1.38%
+RUN: 366838 event:   83917 done:  1.67%
+RUN: 366840 event:   87124 done:  1.74%
+RUN: 366841 event:   93197 done:  1.86%
+RUN: 366729 event:   98094 done:  1.96%
+RUN: 366729 event:  100210 done:  2.00%
+RUN: 366841 event:  101396 done:  2.02%
+RUN: 366850 event:  104892 done:  2.09%
+RUN: 366933 event:  109461 done:  2.18%
+RUN: 366933 event:  150315 done:  3.00%
+RUN: 366729 event:  176835 done:  3.53%
+RUN: 366801 event:  179971 done:  3.59%
+RUN: 366933 event:  180100 done:  3.59%
+RUN: 366933 event:  200420 done:  4.00%
+RUN: 367062 event:  214116 done:  4.27%
+RUN: 367063 event:  214272 done:  4.28%
+RUN: 367064 event:  214498 done:  4.28%
+RUN: 367065 event:  224586 done:  4.48%
+RUN: 366801 event:  232279 done:  4.64%
+RUN: 367065 event:  235272 done:  4.70%
+RUN: 367070 event:  235754 done:  4.71%
+RUN: 367079 event:  238423 done:  4.76%
+RUN: 367079 event:  250525 done:  5.00%
+RUN: 366801 event:  299607 done:  5.98%
+RUN: 366801 event:  300630 done:  6.00%
+RUN: 366727 event:  308381 done:  6.15%
+RUN: 366801 event:  311352 done:  6.21%
+RUN: 366802 event:  311571 done:  6.22%
+RUN: 366804 event:  312129 done:  6.23%
+RUN: 366820 event:  315205 done:  6.29%
+RUN: 366821 event:  326600 done:  6.52%
+RUN: 366727 event:  340526 done:  6.80%
+RUN: 366729 event:  340790 done:  6.80%
+RUN: 366821 event:  344088 done:  6.87%
+RUN: 366821 event:  350735 done:  7.00%
+RUN: 366829 event:  357981 done:  7.14%
+RUN: 366832 event:  364254 done:  7.27%
+RUN: 366833 event:  373043 done:  7.45%
+RUN: 366729 event:  374806 done:  7.48%
+RUN: 366833 event:  378221 done:  7.55%
+RUN: 366838 event:  393014 done:  7.84%
+RUN: 366840 event:  396171 done:  7.91%
+RUN: 366840 event:  400840 done:  8.00%
+RUN: 366841 event:  402393 done:  8.03%
+RUN: 366729 event:  407743 done:  8.14%
+RUN: 366841 event:  411104 done:  8.20%
+RUN: 366850 event:  414361 done:  8.27%
+RUN: 366933 event:  418832 done:  8.36%
+RUN: 366933 event:  450945 done:  9.00%
+RUN: 366729 event:  486846 done:  9.72%
+RUN: 366801 event:  489959 done:  9.78%
+RUN: 366933 event:  490120 done:  9.78%
+RUN: 366933 event:  501050 done: 10.00%
+RUN: 367062 event:  524246 done: 10.46%
+RUN: 367063 event:  524430 done: 10.47%
+RUN: 367064 event:  524687 done: 10.47%
+RUN: 367065 event:  534633 done: 10.67%
+RUN: 366801 event:  542564 done: 10.83%
+RUN: 367065 event:  545542 done: 10.89%
+RUN: 367070 event:  546000 done: 10.90%
+RUN: 367079 event:  548659 done: 10.95%
+RUN: 367079 event:  551155 done: 11.00%
+RUN: 367079 event:  601260 done: 12.00%
+RUN: 366801 event:  609947 done: 12.17%
+RUN: 367095 event:  618837 done: 12.35%
+RUN: 367100 event:  626873 done: 12.51%
+RUN: 367102 event:  627783 done: 12.53%
+RUN: 367103 event:  635427 done: 12.68%
+RUN: 367315 event:  636975 done: 12.71%
+RUN: 367315 event:  651365 done: 13.00%
+RUN: 367315 event:  701470 done: 14.00%
+RUN: 367334 event:  702129 done: 14.01%
+RUN: 367336 event:  745314 done: 14.87%
+RUN: 367336 event:  751575 done: 15.00%
+RUN: 367337 event:  777523 done: 15.52%
+RUN: 367103 event:  782086 done: 15.61%
+RUN: 367104 event:  786970 done: 15.71%
+RUN: 367337 event:  792071 done: 15.81%
+RUN: 367337 event:  801680 done: 16.00%
+RUN: 367337 event:  851785 done: 17.00%
+RUN: 367337 event:  901890 done: 18.00%
+RUN: 367104 event:  931457 done: 18.59%
+RUN: 367337 event:  941199 done: 18.78%
+RUN: 367355 event:  942895 done: 18.82%
+RUN: 367406 event:  943300 done: 18.83%
+RUN: 367406 event:  951995 done: 19.00%
+RUN: 367406 event: 1002100 done: 20.00%
+RUN: 367413 event: 1019242 done: 20.34%
+RUN: 367413 event: 1052205 done: 21.00%
+RUN: 367413 event: 1102310 done: 22.00%
+RUN: 367104 event: 1118564 done: 22.32%
+RUN: 367413 event: 1127505 done: 22.50%
+RUN: 367413 event: 1152415 done: 23.00%
+RUN: 367413 event: 1202520 done: 24.00%
+RUN: 367415 event: 1232577 done: 24.60%
+RUN: 367416 event: 1243860 done: 24.82%
+RUN: 367475 event: 1249782 done: 24.94%
+RUN: 367475 event: 1252625 done: 25.00%
+RUN: 367104 event: 1261785 done: 25.18%
+RUN: 367475 event: 1270465 done: 25.36%
+RUN: 367475 event: 1302730 done: 26.00%
+RUN: 367475 event: 1352835 done: 27.00%
+RUN: 367477 event: 1369087 done: 27.32%
+RUN: 367477 event: 1402940 done: 28.00%
+RUN: 367477 event: 1453045 done: 29.00%
+RUN: 367104 event: 1463602 done: 29.21%
+RUN: 367477 event: 1473209 done: 29.40%
+RUN: 367477 event: 1503150 done: 30.00%
+RUN: 367477 event: 1553255 done: 31.00%
+RUN: 367515 event: 1576160 done: 31.46%
+RUN: 367515 event: 1603360 done: 32.00%
+RUN: 367104 event: 1611228 done: 32.16%
+RUN: 367515 event: 1620498 done: 32.34%
+RUN: 367515 event: 1653465 done: 33.00%
+RUN: 367104 event: 1702471 done: 33.98%
+RUN: 367104 event: 1703570 done: 34.00%
+RUN: 367095 event: 1727357 done: 34.47%
+RUN: 367104 event: 1736743 done: 34.66%
+RUN: 367104 event: 1753675 done: 35.00%
+RUN: 367111 event: 1753806 done: 35.00%
+RUN: 367112 event: 1780272 done: 35.53%
+RUN: 367112 event: 1803780 done: 36.00%
+RUN: 367095 event: 1828887 done: 36.50%
+RUN: 367112 event: 1839350 done: 36.71%
+RUN: 367112 event: 1853885 done: 37.00%
+RUN: 367112 event: 1903990 done: 38.00%
+RUN: 367127 event: 1914467 done: 38.21%
+RUN: 367095 event: 1919583 done: 38.31%
+RUN: 367127 event: 1929883 done: 38.52%
+RUN: 367127 event: 1954095 done: 39.00%
+RUN: 367128 event: 1971743 done: 39.35%
+RUN: 367129 event: 1972858 done: 39.37%
+RUN: 367130 event: 1973369 done: 39.38%
+RUN: 367131 event: 1994149 done: 39.80%
+RUN: 367131 event: 2004200 done: 40.00%
+RUN: 367133 event: 2013234 done: 40.18%
+RUN: 367228 event: 2053747 done: 40.99%
+RUN: 367228 event: 2054305 done: 41.00%
+RUN: 367095 event: 2067172 done: 41.26%
+RUN: 367228 event: 2077779 done: 41.47%
+RUN: 367229 event: 2091959 done: 41.75%
+RUN: 367230 event: 2097385 done: 41.86%
+RUN: 367231 event: 2097515 done: 41.86%
+RUN: 367232 event: 2101010 done: 41.93%
+RUN: 367232 event: 2104410 done: 42.00%
+RUN: 367232 event: 2154515 done: 43.00%
+RUN: 367232 event: 2204620 done: 44.00%
+RUN: 367095 event: 2234273 done: 44.59%
+RUN: 367100 event: 2241199 done: 44.73%
+RUN: 367232 event: 2243639 done: 44.78%
+RUN: 367232 event: 2254725 done: 45.00%
+RUN: 367234 event: 2267284 done: 45.25%
+RUN: 367234 event: 2304830 done: 46.00%
+RUN: 367260 event: 2331146 done: 46.52%
+RUN: 367260 event: 2354935 done: 47.00%
+RUN: 367262 event: 2356394 done: 47.03%
+RUN: 367100 event: 2380629 done: 47.51%
+RUN: 367262 event: 2389373 done: 47.69%
+RUN: 367262 event: 2405040 done: 48.00%
+RUN: 367263 event: 2407463 done: 48.05%
+RUN: 367264 event: 2409191 done: 48.08%
+RUN: 367264 event: 2455145 done: 49.00%
+RUN: 367264 event: 2505250 done: 50.00%
+RUN: 367267 event: 2519756 done: 50.29%
+RUN: 367100 event: 2522192 done: 50.34%
+RUN: 367267 event: 2532711 done: 50.55%
+RUN: 367267 event: 2555355 done: 51.00%
+RUN: 367269 event: 2561682 done: 51.13%
+RUN: 367270 event: 2566436 done: 51.22%
+RUN: 367270 event: 2605460 done: 52.00%
+RUN: 367270 event: 2655565 done: 53.00%
+RUN: 367100 event: 2674550 done: 53.38%
+RUN: 367270 event: 2685152 done: 53.59%
+RUN: 367270 event: 2705670 done: 54.00%
+RUN: 367271 event: 2714968 done: 54.18%
+RUN: 367312 event: 2729655 done: 54.48%
+RUN: 367314 event: 2751363 done: 54.91%
+RUN: 367315 event: 2754530 done: 54.97%
+RUN: 367315 event: 2755775 done: 55.00%
+RUN: 367315 event: 2805880 done: 56.00%
+RUN: 367095 event: 2814886 done: 56.18%
+RUN: 367100 event: 2822604 done: 56.33%
+RUN: 367102 event: 2823492 done: 56.35%
+RUN: 367103 event: 2831100 done: 56.50%
+RUN: 367315 event: 2832712 done: 56.53%
+RUN: 367315 event: 2855985 done: 57.00%
+RUN: 367334 event: 2897867 done: 57.83%
+RUN: 367334 event: 2906090 done: 58.00%
+RUN: 367336 event: 2940263 done: 58.68%
+RUN: 367336 event: 2956195 done: 59.00%
+RUN: 367337 event: 2972066 done: 59.32%
+RUN: 367103 event: 2976916 done: 59.41%
+RUN: 367104 event: 2981844 done: 59.51%
+RUN: 367337 event: 2987230 done: 59.62%
+RUN: 367337 event: 3006300 done: 60.00%
+RUN: 367337 event: 3056405 done: 61.00%
+RUN: 367337 event: 3106510 done: 62.00%
+RUN: 367104 event: 3126621 done: 62.40%
+RUN: 367337 event: 3136723 done: 62.60%
+RUN: 367355 event: 3138460 done: 62.64%
+RUN: 367406 event: 3138884 done: 62.65%
+RUN: 367406 event: 3156615 done: 63.00%
+RUN: 367406 event: 3206720 done: 64.00%
+RUN: 367413 event: 3215288 done: 64.17%
+RUN: 367413 event: 3256825 done: 65.00%
+RUN: 367413 event: 3306930 done: 66.00%
+RUN: 367104 event: 3314802 done: 66.16%
+RUN: 367413 event: 3324138 done: 66.34%
+RUN: 367413 event: 3357035 done: 67.00%
+RUN: 367413 event: 3407140 done: 68.00%
+RUN: 367415 event: 3429008 done: 68.44%
+RUN: 367416 event: 3440167 done: 68.66%
+RUN: 367475 event: 3446184 done: 68.78%
+RUN: 367475 event: 3457245 done: 69.00%
+RUN: 367104 event: 3458533 done: 69.02%
+RUN: 367475 event: 3467146 done: 69.20%
+RUN: 367475 event: 3507350 done: 70.00%
+RUN: 367475 event: 3557455 done: 71.00%
+RUN: 367477 event: 3565347 done: 71.16%
+RUN: 367477 event: 3607560 done: 72.00%
+RUN: 367477 event: 3657665 done: 73.00%
+RUN: 367104 event: 3658867 done: 73.02%
+RUN: 367477 event: 3668370 done: 73.21%
+RUN: 367477 event: 3707770 done: 74.00%
+RUN: 367477 event: 3757875 done: 75.00%
+RUN: 367515 event: 3771764 done: 75.28%
+RUN: 367104 event: 3805912 done: 75.96%
+RUN: 367104 event: 3807980 done: 76.00%
+RUN: 367515 event: 3814762 done: 76.13%
+RUN: 367515 event: 3858085 done: 77.00%
+RUN: 367104 event: 3897615 done: 77.79%
+RUN: 367104 event: 3908190 done: 78.00%
+RUN: 367095 event: 3921955 done: 78.27%
+RUN: 367104 event: 3931873 done: 78.47%
+RUN: 367111 event: 3949063 done: 78.81%
+RUN: 367111 event: 3958295 done: 79.00%
+RUN: 367112 event: 3975451 done: 79.34%
+RUN: 367112 event: 4008400 done: 80.00%
+RUN: 367095 event: 4023869 done: 80.31%
+RUN: 367112 event: 4034189 done: 80.51%
+RUN: 367112 event: 4058505 done: 81.00%
+RUN: 367112 event: 4108610 done: 82.00%
+RUN: 367127 event: 4109765 done: 82.02%
+RUN: 367095 event: 4115217 done: 82.13%
+RUN: 367127 event: 4125753 done: 82.34%
+RUN: 367127 event: 4158715 done: 83.00%
+RUN: 367128 event: 4167054 done: 83.16%
+RUN: 367129 event: 4168215 done: 83.19%
+RUN: 367130 event: 4168749 done: 83.20%
+RUN: 367131 event: 4189702 done: 83.62%
+RUN: 367131 event: 4208820 done: 84.00%
+RUN: 367133 event: 4209064 done: 84.00%
+RUN: 367228 event: 4249818 done: 84.82%
+RUN: 367228 event: 4258925 done: 85.00%
+RUN: 367095 event: 4263475 done: 85.09%
+RUN: 367228 event: 4273982 done: 85.30%
+RUN: 367229 event: 4288135 done: 85.58%
+RUN: 367230 event: 4293731 done: 85.69%
+RUN: 367231 event: 4293895 done: 85.70%
+RUN: 367232 event: 4297366 done: 85.77%
+RUN: 367232 event: 4309030 done: 86.00%
+RUN: 367232 event: 4359135 done: 87.00%
+RUN: 367232 event: 4409240 done: 88.00%
+RUN: 367095 event: 4429902 done: 88.41%
+RUN: 367100 event: 4436563 done: 88.54%
+RUN: 367232 event: 4439062 done: 88.59%
+RUN: 367232 event: 4459345 done: 89.00%
+RUN: 367234 event: 4463139 done: 89.07%
+RUN: 367234 event: 4509450 done: 90.00%
+RUN: 367260 event: 4527002 done: 90.35%
+RUN: 367262 event: 4552275 done: 90.85%
+RUN: 367262 event: 4559555 done: 91.00%
+RUN: 367100 event: 4576494 done: 91.34%
+RUN: 367262 event: 4585174 done: 91.51%
+RUN: 367263 event: 4603045 done: 91.87%
+RUN: 367264 event: 4604726 done: 91.90%
+RUN: 367264 event: 4609660 done: 92.00%
+RUN: 367264 event: 4659765 done: 93.00%
+RUN: 367264 event: 4709870 done: 94.00%
+RUN: 367267 event: 4715622 done: 94.11%
+RUN: 367100 event: 4718084 done: 94.16%
+RUN: 367267 event: 4728736 done: 94.37%
+RUN: 367269 event: 4757742 done: 94.95%
+RUN: 367269 event: 4759975 done: 95.00%
+RUN: 367270 event: 4762442 done: 95.05%
+RUN: 367270 event: 4810080 done: 96.00%
+RUN: 367270 event: 4860185 done: 97.00%
+RUN: 367100 event: 4870408 done: 97.20%
+RUN: 367270 event: 4880950 done: 97.41%
+RUN: 367270 event: 4910290 done: 98.00%
+RUN: 367271 event: 4910761 done: 98.01%
+RUN: 367312 event: 4925730 done: 98.31%
+RUN: 367314 event: 4947310 done: 98.74%
+RUN: 367315 event: 4950388 done: 98.80%
+RUN: 367315 event: 4960395 done: 99.00%
+RUN: 367315 event: 5010500 done:100.00%
+ENDJOB, summaries:
+ SIZE OF L1 ALGOS: 247
+ SIZE OF HLT ALGOS: 678
+ RUN: 366727 eff: 1.0000 +/- 0.0476 stat: 21/21
+ RUN: 366729 eff: 0.9839 +/- 0.0113 stat: 122/124
+ RUN: 366801 eff: 0.9744 +/- 0.0146 stat: 114/117
+ RUN: 366802 eff: 1.0000 +/- 0.1429 stat: 7/7
+ RUN: 366804 eff: 1.0000 +/- 0.0455 stat: 22/22
+ RUN: 366820 eff: 0.9878 +/- 0.0061 stat: 324/328
+ RUN: 366821 eff: 0.9822 +/- 0.0047 stat: 773/787
+ RUN: 366829 eff: 0.9894 +/- 0.0075 stat: 186/188
+ RUN: 366832 eff: 0.9874 +/- 0.0072 stat: 235/238
+ RUN: 366833 eff: 0.9720 +/- 0.0080 stat: 416/428
+ RUN: 366838 eff: 0.9891 +/- 0.0108 stat: 91/92
+ RUN: 366840 eff: 0.9892 +/- 0.0076 stat: 184/186
+ RUN: 366841 eff: 0.9920 +/- 0.0056 stat: 248/250
+ RUN: 366850 eff: 0.9931 +/- 0.0069 stat: 143/144
+ RUN: 366933 eff: 0.9857 +/- 0.0024 stat: 2343/2377
+ RUN: 367062 eff: 1.0000 +/- 0.1667 stat: 6/6
+ RUN: 367063 eff: 1.0000 +/- 0.2500 stat: 4/4
+ RUN: 367064 eff: 0.9848 +/- 0.0075 stat: 260/264
+ RUN: 367065 eff: 0.9779 +/- 0.0098 stat: 221/226
+ RUN: 367070 eff: 0.9821 +/- 0.0177 stat: 55/56
+ RUN: 367079 eff: 0.9874 +/- 0.0030 stat: 1337/1354
+ RUN: 367095 eff: 0.9810 +/- 0.0039 stat: 1187/1210
+ RUN: 367100 eff: 0.9900 +/- 0.0038 stat: 692/699
+ RUN: 367102 eff: 0.9832 +/- 0.0096 stat: 176/179
+ RUN: 367103 eff: 0.9928 +/- 0.0072 stat: 137/138
+ RUN: 367104 eff: 0.9868 +/- 0.0025 stat: 2022/2049
+ RUN: 367111 eff: 0.9808 +/- 0.0053 stat: 664/677
+ RUN: 367112 eff: 0.9865 +/- 0.0021 stat: 3000/3041
+ RUN: 367127 eff: 0.9874 +/- 0.0034 stat: 1093/1107
+ RUN: 367128 eff: 1.0000 +/- 0.0417 stat: 24/24
+ RUN: 367129 eff: 0.9000 +/- 0.0949 stat: 9/10
+ RUN: 367130 eff: 0.9960 +/- 0.0028 stat: 498/500
+ RUN: 367131 eff: 0.9858 +/- 0.0057 stat: 417/423
+ RUN: 367133 eff: 0.9848 +/- 0.0040 stat: 910/924
+ RUN: 367228 eff: 0.9686 +/- 0.0069 stat: 617/637
+ RUN: 367229 eff: 0.9865 +/- 0.0095 stat: 146/148
+ RUN: 367230 eff: 1.0000 +/- 0.2500 stat: 4/4
+ RUN: 367231 eff: 1.0000 +/- 0.0149 stat: 67/67
+ RUN: 367232 eff: 0.9859 +/- 0.0020 stat: 3567/3618
+ RUN: 367234 eff: 0.9859 +/- 0.0030 stat: 1473/1494
+ RUN: 367260 eff: 0.9884 +/- 0.0044 stat: 594/601
+ RUN: 367262 eff: 0.9882 +/- 0.0035 stat: 920/931
+ RUN: 367263 eff: 1.0000 +/- 0.0238 stat: 42/42
+ RUN: 367264 eff: 0.9877 +/- 0.0022 stat: 2574/2606
+ RUN: 367267 eff: 0.9831 +/- 0.0047 stat: 755/768
+ RUN: 367269 eff: 0.9899 +/- 0.0100 stat: 98/99
+ RUN: 367270 eff: 0.9883 +/- 0.0019 stat: 3201/3239
+ RUN: 367271 eff: 0.9769 +/- 0.0081 stat: 338/346
+ RUN: 367312 eff: 0.9813 +/- 0.0062 stat: 473/482
+ RUN: 367314 eff: 1.0000 +/- 0.0143 stat: 70/70
+ RUN: 367315 eff: 0.9851 +/- 0.0024 stat: 2579/2618
+ RUN: 367334 eff: 0.9872 +/- 0.0045 stat: 617/625
+ RUN: 367336 eff: 0.9868 +/- 0.0053 stat: 449/455
+ RUN: 367337 eff: 0.9865 +/- 0.0025 stat: 2050/2078
+ RUN: 367355 eff: 1.0000 +/- 0.2000 stat: 5/5
+ RUN: 367406 eff: 0.9855 +/- 0.0034 stat: 1223/1241
+ RUN: 367413 eff: 0.9847 +/- 0.0021 stat: 3481/3535
+ RUN: 367415 eff: 0.9716 +/- 0.0125 stat: 171/176
+ RUN: 367416 eff: 0.9901 +/- 0.0099 stat: 100/101
+ RUN: 367475 eff: 0.9862 +/- 0.0027 stat: 1854/1880
+ RUN: 367477 eff: 0.9864 +/- 0.0020 stat: 3401/3448
+ RUN: 367515 eff: 0.9873 +/- 0.0025 stat: 1939/1964
+Eff run summary: 0.9858 +/- 0.0005
+ RUN: 366727 D-E: 0.7647 +/- 0.0364 stat: 104/136
+ RUN: 366729 D-E: 0.7520 +/- 0.0192 stat: 382/508
+ RUN: 366801 D-E: 0.7140 +/- 0.0210 stat: 332/465
+ RUN: 366802 D-E: 0.8077 +/- 0.0773 stat: 21/26
+ RUN: 366804 D-E: 0.7168 +/- 0.0424 stat: 81/113
+ RUN: 366820 D-E: 0.7491 +/- 0.0109 stat: 1191/1590
+ RUN: 366821 D-E: 0.7461 +/- 0.0072 stat: 2692/3608
+ RUN: 366829 D-E: 0.7261 +/- 0.0159 stat: 570/785
+ RUN: 366832 D-E: 0.7506 +/- 0.0125 stat: 906/1207
+ RUN: 366833 D-E: 0.7563 +/- 0.0095 stat: 1558/2060
+ RUN: 366838 D-E: 0.7464 +/- 0.0214 stat: 309/414
+ RUN: 366840 D-E: 0.7266 +/- 0.0151 stat: 630/867
+ RUN: 366841 D-E: 0.7663 +/- 0.0122 stat: 928/1211
+ RUN: 366850 D-E: 0.7381 +/- 0.0175 stat: 465/630
+ RUN: 366933 D-E: 0.7376 +/- 0.0042 stat: 8155/11056
+ RUN: 367062 D-E: 0.7333 +/- 0.1142 stat: 11/15
+ RUN: 367063 D-E: 0.9167 +/- 0.0564 stat: 22/24
+ RUN: 367064 D-E: 0.7441 +/- 0.0127 stat: 884/1188
+ RUN: 367065 D-E: 0.7513 +/- 0.0139 stat: 731/973
+ RUN: 367070 D-E: 0.7331 +/- 0.0279 stat: 184/251
+ RUN: 367079 D-E: 0.7348 +/- 0.0055 stat: 4777/6501
+ RUN: 367095 D-E: 0.7300 +/- 0.0060 stat: 3975/5445
+ RUN: 367100 D-E: 0.7407 +/- 0.0075 stat: 2545/3436
+ RUN: 367102 D-E: 0.7217 +/- 0.0158 stat: 581/805
+ RUN: 367103 D-E: 0.7141 +/- 0.0174 stat: 482/675
+ RUN: 367104 D-E: 0.7482 +/- 0.0044 stat: 7158/9567
+ RUN: 367111 D-E: 0.7510 +/- 0.0077 stat: 2362/3145
+ RUN: 367112 D-E: 0.7431 +/- 0.0037 stat: 10235/13774
+ RUN: 367127 D-E: 0.7360 +/- 0.0062 stat: 3759/5107
+ RUN: 367128 D-E: 0.7123 +/- 0.0375 stat: 104/146
+ RUN: 367129 D-E: 0.7400 +/- 0.0620 stat: 37/50
+ RUN: 367130 D-E: 0.7282 +/- 0.0094 stat: 1640/2252
+ RUN: 367131 D-E: 0.7357 +/- 0.0100 stat: 1442/1960
+ RUN: 367133 D-E: 0.7427 +/- 0.0066 stat: 3236/4357
+ RUN: 367228 D-E: 0.7583 +/- 0.0082 stat: 2058/2714
+ RUN: 367229 D-E: 0.7869 +/- 0.0158 stat: 528/671
+ RUN: 367230 D-E: 0.7000 +/- 0.1449 stat: 7/10
+ RUN: 367231 D-E: 0.7601 +/- 0.0215 stat: 301/396
+ RUN: 367232 D-E: 0.7462 +/- 0.0034 stat: 12412/16634
+ RUN: 367234 D-E: 0.7530 +/- 0.0053 stat: 4945/6567
+ RUN: 367260 D-E: 0.7382 +/- 0.0085 stat: 1988/2693
+ RUN: 367262 D-E: 0.7430 +/- 0.0066 stat: 3264/4393
+ RUN: 367263 D-E: 0.6961 +/- 0.0342 stat: 126/181
+ RUN: 367264 D-E: 0.7427 +/- 0.0040 stat: 8831/11890
+ RUN: 367267 D-E: 0.7329 +/- 0.0074 stat: 2609/3560
+ RUN: 367269 D-E: 0.7606 +/- 0.0187 stat: 394/518
+ RUN: 367270 D-E: 0.7456 +/- 0.0035 stat: 11431/15332
+ RUN: 367271 D-E: 0.7592 +/- 0.0107 stat: 1223/1611
+ RUN: 367312 D-E: 0.7547 +/- 0.0097 stat: 1483/1965
+ RUN: 367314 D-E: 0.7500 +/- 0.0228 stat: 270/360
+ RUN: 367315 D-E: 0.7376 +/- 0.0040 stat: 8777/11900
+ RUN: 367334 D-E: 0.7429 +/- 0.0081 stat: 2184/2940
+ RUN: 367336 D-E: 0.7380 +/- 0.0094 stat: 1600/2168
+ RUN: 367337 D-E: 0.7442 +/- 0.0046 stat: 6828/9175
+ RUN: 367355 D-E: 0.8214 +/- 0.0724 stat: 23/28
+ RUN: 367406 D-E: 0.7483 +/- 0.0057 stat: 4385/5860
+ RUN: 367413 D-E: 0.7499 +/- 0.0035 stat: 11699/15600
+ RUN: 367415 D-E: 0.7723 +/- 0.0148 stat: 624/808
+ RUN: 367416 D-E: 0.7574 +/- 0.0204 stat: 334/441
+ RUN: 367475 D-E: 0.7406 +/- 0.0047 stat: 6488/8761
+ RUN: 367477 D-E: 0.7502 +/- 0.0035 stat: 11341/15118
+ RUN: 367515 D-E: 0.7464 +/- 0.0045 stat: 7005/9385
+Data-Emul summ.: 0.7442 +/- 0.0009
+END

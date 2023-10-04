@@ -35,7 +35,7 @@ std::ostream & operator<< (std::ostream &out, const L1Obj &o)
     if (o.chargeValue()==1) out <<"+"; 
     else if (o.chargeValue()==-1) out <<"-";
     else out <<"?";
-  out <<o.pt<<", eta: "<<o.eta;
+  out <<o.pt<<"(V:"<<o.ptValue()<<")"<<", eta: "<<o.eta<<"(V:"<<o.etaValue()<<")";
   out <<", phi: ";  
   if (o.iProcessor >= 0){ out<<std::setw(2)<<o.iProcessor<<"_";} else { out<<std::setw(5); }
   out <<o.phi <<" (V: "<<std::setprecision(4)<<o.phiValue()<<std::setprecision(6)<<")";

@@ -4,6 +4,7 @@ import sys
 import math
 from ROOT import *
 
+
 def plot1(hIn):
 #  h.Print('all')
   h = hIn.Clone()
@@ -76,14 +77,15 @@ def cTimeEffPt(canvas):
   c=TCanvas("cTimeEffPt","cTimeEffPt",1200,400)
   canvas.Add(c)
   c.Divide(3)
-  hNull=TH1D("hNull","hNull;L1 p_{T};fraction",6,0.,29.9);
+  hNull=TH1D("hNull","hNull; p_{T} [GeV];fraction",6,0.,29.9);
   hNull.SetMaximum(1.5)
   hNull.SetMinimum(1.e-5)
   hNull.SetStats(0)
 
   pad1 = c.cd(1)
   pad1.SetLogy()
-  pad1.SetTicky()
+  pad1.SetTicky()   
+  pad1.SetLeftMargin(0.13)
   hEffPt1 = gROOT.FindObject("hTimeEffPt_BMTF").Clone("hTimeEffPt_BMTF_Copy")
   hNull.SetTitle(hEffPt1.GetTitle())
   hNull.DrawCopy()
@@ -92,6 +94,7 @@ def cTimeEffPt(canvas):
   pad2 = c.cd(2)
   pad2.SetLogy()
   pad2.SetTicky()
+  pad2.SetLeftMargin(0.13)
   hEffPt2 = gROOT.FindObject("hTimeEffPt_OMTF").Clone("hTimeEffPt_OMTF_Copy")
   hNull.SetTitle(hEffPt2.GetTitle())
   hNull.DrawCopy()
@@ -100,6 +103,7 @@ def cTimeEffPt(canvas):
   pad3 = c.cd(3)
   pad3.SetLogy()
   pad3.SetTicky()
+  pad3.SetLeftMargin(0.13)
   hEffPt3 = gROOT.FindObject("hTimeEffPt_EMTF").Clone("hTimeEffPt_EMTF_Copy")
   hNull.SetTitle(hEffPt3.GetTitle())
   hNull.DrawCopy()
@@ -296,26 +300,223 @@ def cTimeEta(canvas) :
   h22.Draw('same')
   c.Update()
   return 
+  
+  
+####################################moja praca  
+  
+def chTimePrefireEta(canvas):
+    c=TCanvas("chTimePrefireEta","chTimePrefireEta",700,400)
+    canvas.Add(c)
+    c.SetGridy(100)
+    c.SetGridx(100)
+    hhTimePrefireEta = gROOT.FindObject("hTimePrefireEta")
+    hhTimePrefireEta.SetLineColor(1)
+    hhTimePrefireEta.SetTitle("Prefiring ,/ for ,/ bx_{-1} ,/ p_{T} \geq 10 ,/ GeV; \eta [-]; bx-1/(bx-0 or bx-1)")
+    hhTimePrefireEta.Draw()
+    c.Update()
+    graph = hhTimePrefireEta.GetPaintedGraph()
+    graph.GetYaxis().SetNdivisions(808)
+    graph.GetXaxis().SetNdivisions(808)
+    graph.SetStats(1)
+    c.Update()
+    return
+
+def chTimePrefireEta1(canvas):
+    c=TCanvas("chTimePrefireEta1","chTimePrefireEta1",700,400)
+    canvas.Add(c)
+    c.SetGridy(100)
+    c.SetGridx(100)
+    hhTimePrefireEta1 = gROOT.FindObject("hTimePrefireEta1")
+    hhTimePrefireEta1.SetLineColor(1)
+    hhTimePrefireEta1.SetTitle("Prefiring ,/ with ,/ OMTF ,/ veto ,/ for  ,/ bx_{-1} ,/ p_{T} \geq ,/ 10 GeV; \eta [-]; bx-1/(bx-0 or bx-1)")
+    hhTimePrefireEta1.Draw()
+    c.Update()
+    graph = hhTimePrefireEta1.GetPaintedGraph()
+    graph.GetYaxis().SetNdivisions(808)
+    graph.GetXaxis().SetNdivisions(808)
+    graph.SetStats(1)
+    c.Update()
+    return
+
+
+def cDeltaphieta(canvas):
+  c = TCanvas("cDeltaphieta","cDeltaphieta",1300,400)
+  canvas.Add(c)
+  c.Divide(3)
+  pad1 = c.cd(1)
+  hDeltaphieta010 = gROOT.FindObject("hDeltaphieta010")
+  hDeltaphieta010.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ p_T<10 GeV; \Delta \eta; \Delta \phi ")
+  hDeltaphieta010.SetStats(0)
+  hDeltaphieta010.Draw('BOX,TEXT')
+  
+  
+  pad2 = c.cd(2)
+  hDeltaphieta1022 = gROOT.FindObject("hDeltaphieta1022")
+  hDeltaphieta1022.SetStats(0)
+  hDeltaphieta1022.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ 10 GeV \leq p_T<22 GeV; \Delta \eta; \Delta \phi ")
+  hDeltaphieta1022.Draw('BOX,TEXT')
+  
+  pad3 = c.cd(3)
+  hDeltaphieta22inf = gROOT.FindObject("hDeltaphieta22inf")
+  hDeltaphieta22inf.SetStats(0)
+  hDeltaphieta22inf.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ p_T \geq 22 GeV ; \Delta \eta; \Delta \phi ")
+  hDeltaphieta22inf.Draw('BOX,TEXT')
+  
+  c.Update()
+  return 
+  
+def cDeltaphieta025(canvas):
+  c = TCanvas("cDeltaphieta025","cDeltaphieta025",1300,400)
+  canvas.Add(c)
+  c.Divide(3)
+  pad1 = c.cd(1)
+  hDeltaphieta010_025 = gROOT.FindObject("hDeltaphieta010_025")
+  hDeltaphieta010_025.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ p_T<10 GeV; \Delta \eta; \Delta \phi ")
+  hDeltaphieta010_025.SetStats(0)
+
+  hDeltaphieta010_025.DrawCopy('BOX,TEXT')
+  
+  pad2 = c.cd(2)
+  hDeltaphieta1022_025 = gROOT.FindObject("hDeltaphieta1022_025")
+  hDeltaphieta1022_025.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ 10 GeV \leq p_T<22 GeV; \Delta \eta; \Delta \phi ")
+  hDeltaphieta1022_025.SetStats(0)
+  hDeltaphieta1022_025.Draw('BOX,TEXT')
+
+  
+  pad3 = c.cd(3)
+  hDeltaphieta22inf_025 = gROOT.FindObject("hDeltaphieta22inf_025")
+  hDeltaphieta22inf_025.SetTitle("OMTF \ between \, bx_{0} \, and \, bx_{-1} \ p_T \geq 22 GeV; \Delta \eta; \Delta \phi ")
+  hDeltaphieta22inf_025.SetStats(0)
+  hDeltaphieta22inf_025.DrawCopy('BOX,TEXT')
+
+  
+  c.Update()
+  return  
+  
+  
+def  chQualitybx0(canvas): 
+    
+    pad = TPad("pad", "Pad", 0, 0, 1, 1)
+    pad.SetLeftMargin(0.2)     
+    c=TCanvas("chQualitybx0","chQualitybx0",700,400)
+    pad.Draw()
+    pad.cd()
+
+    canvas.Add(c)
+    hQualitybx0=gROOT.FindObject("hQualitybx0")
+    hQualitybx0.GetYaxis().SetBinLabel(1,"p_{t}<10 GeV")
+    hQualitybx0.GetYaxis().SetBinLabel(2,"10 GeV $\\leq$ p_{t} $<$22 GeV")
+    hQualitybx0.GetYaxis().SetBinLabel(3,"p_{t}$\\geq$22 GeV")
+    hQualitybx0.Draw('BOX,TEXT')
+    hQualitybx0.SetStats(0)
+    
+    pad.Update()
+
+    c.Update()
+    return
+
+def  chTimePt22(canvas):
+    c=TCanvas("chTimePt22","chTimePt22",700,400)
+    c.SetLogy()
+    canvas.Add(c)
+    hTimePt22=gROOT.FindObject("hTimePt22")
+    hTimePt22.Draw()
+    hTimePt22.Scale(1/hTimePt22.Integral(),'WIDTH')
+    
+    c.Update()
+    return
+def  chTimePtbinning(canvas):
+    
+    pad = TPad("pad", "Pad", 0, 0, 1, 1)
+    pad.SetLeftMargin(0.2) 
+    c=TCanvas("chTimePtbinning","chTimePtbinning",800,500)
+    
+    pad.Draw()
+    pad.cd()
+    
+    canvas.Add(c)
+    hTimePtbinning=gROOT.FindObject("hTimePtbinning")
+    hTimePtbinning.GetYaxis().SetBinLabel(1,"p_{t}<10 GeV")
+    hTimePtbinning.GetYaxis().SetBinLabel(2,"10 GeV $\\leq$ p_{t} $<$22 GeV")
+    hTimePtbinning.GetYaxis().SetBinLabel(3,"p_{t}$\\geq$22 GeV")
+    hTimePtbinning.GetXaxis().SetBinLabel(2,"bx_{-1} and bx_{0}")
+    hTimePtbinning.GetXaxis().SetBinLabel(1,"bx_{-1}")
+    hTimePtbinning.SetTitle("OMTF")
+    hTimePtbinning.GetXaxis().SetTitle("")
+    hTimePtbinning.SetStats(0)
+    hTimePtbinning.Draw('BOX,TEXT')
+    
+    c.Update()
+    c.SetLeftMargin(0.8)
+    pad.Update()
+    c.Update()
+    return
+
+def cTimeEffPt1(canvas):
+  c=TCanvas("cTimeEffPt1","cTimeEffPt1",1200,400)
+  canvas.Add(c)
+  c.Divide(3)
+  hNull=TH1D("hNull","hNull; p_{T} [GeV];fraction",6,0.,29.9);
+  hNull.SetMaximum(1.5)
+  hNull.SetMinimum(1.e-5)
+  hNull.SetStats(0)
+
+  pad1 = c.cd(1)
+  pad1.SetLogy()
+  pad1.SetTicky()
+  pad1.SetLeftMargin(0.13)
+  hEffPt1 = gROOT.FindObject("hTimeEffPt1_BMTF").Clone("hTimeEffPt1_BMTF_Copy")
+  hNull.SetTitle(hEffPt1.GetTitle())
+  hNull.DrawCopy()
+  hEffPt1.Draw('same')
+
+  pad2 = c.cd(2)
+  pad2.SetLogy()
+  pad2.SetTicky()
+  pad2.SetLeftMargin(0.13)
+  hEffPt2 = gROOT.FindObject("hTimeEffPt1_OMTF").Clone("hTimeEffPt1_OMTF_Copy")
+  hNull.SetTitle(hEffPt2.GetTitle())
+  hNull.DrawCopy()
+  hEffPt2.Draw('same')
+
+  pad3 = c.cd(3)
+  pad3.SetLogy()
+  pad3.SetTicky()
+  pad3.SetLeftMargin(0.13)
+  hEffPt3 = gROOT.FindObject("hTimeEffPt1_EMTF").Clone("hTimeEffPt1_EMTF_Copy")
+  hNull.SetTitle(hEffPt3.GetTitle())
+  hNull.DrawCopy()
+  hEffPt3.Draw('same')
+  c.Update()
+  return
 
 def plotAll(canvas) :
 #  cTimeMtfsCorr(canvas)
 #  cTimeMtfs(canvas,'Bmtf_A','Omtf_A','Emtf_A')
 #  cTimeMtfs(canvas,'Bmtf_Q','Omtf_Q','Emtf_Q')
 #  cTimeMtfs(canvas,'Bmtf_M','Omtf_M','Emtf_M')
-  cTimeMtfs(canvas,'Bmtf_QM','Omtf_QM','Emtf_QM')
+#  cTimeMtfs(canvas,'Bmtf_QM','Omtf_QM','Emtf_QM')
 #  cTimeMtfs(canvas,'Omtf_Q','Omtf_QM','Omtf_emu_QM')
 #  cTimeMtfs(canvas,'Bmtf_W','Omtf_W','Emtf_W')
 #  cTimeMtfs(canvas,'Bmtf_QW','Omtf_QW','Emtf_QW')
 #  cTimeMtf(canvas,'Bmtf')
-  cTimeMtf(canvas,'Omtf')
-  cTimeMtf(canvas,'Omtf_emu')
+#  cTimeMtf(canvas,'Omtf')
+#  cTimeMtf(canvas,'Omtf_emu')
 #  cTimeMtf(canvas,'Emtf')
 #  cTimeTrackPt(canvas)
 #  cTimeTrackBX(canvas)
-  cTimeDeltaR(canvas)
-  cTimeLayers(canvas)
-  cTimeEffPt(canvas)
-  cTimeEta(canvas)
-  return
+#  cTimeDeltaR(canvas)
+#  cTimeLayers(canvas)
+   cTimeEffPt(canvas)
+#  cTimeEta(canvas)
+   chTimePrefireEta(canvas)
+   chTimePrefireEta1(canvas)
+   cDeltaphieta(canvas)
+   cDeltaphieta025(canvas)
+   chQualitybx0(canvas)
+#  chTimePt22(canvas)
+   chTimePtbinning(canvas)
+   cTimeEffPt1(canvas)
+   return
 
 
