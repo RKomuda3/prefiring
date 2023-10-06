@@ -305,7 +305,7 @@ def cTimeEta(canvas) :
 ####################################moja praca  
   
 def chTimePrefireEta(canvas):
-    c=TCanvas("chTimePrefireEta","chTimePrefireEta",700,400)
+    c=TCanvas("chTimePrefireEta","chTimePrefireEta",1400,800)
     canvas.Add(c)
     c.SetGridy(100)
     c.SetGridx(100)
@@ -322,7 +322,7 @@ def chTimePrefireEta(canvas):
     return
 
 def chTimePrefireEta1(canvas):
-    c=TCanvas("chTimePrefireEta1","chTimePrefireEta1",700,400)
+    c=TCanvas("chTimePrefireEta1","chTimePrefireEta1",1400,800)
     canvas.Add(c)
     c.SetGridy(100)
     c.SetGridx(100)
@@ -398,7 +398,7 @@ def  chQualitybx0(canvas):
     
     pad = TPad("pad", "Pad", 0, 0, 1, 1)
     pad.SetLeftMargin(0.2)     
-    c=TCanvas("chQualitybx0","chQualitybx0",700,400)
+    c=TCanvas("chQualitybx0","chQualitybx0",1400,800)
     pad.Draw()
     pad.cd()
 
@@ -416,7 +416,7 @@ def  chQualitybx0(canvas):
     return
 
 def  chTimePt22(canvas):
-    c=TCanvas("chTimePt22","chTimePt22",700,400)
+    c=TCanvas("chTimePt22","chTimePt22",1400,800)
     c.SetLogy()
     canvas.Add(c)
     hTimePt22=gROOT.FindObject("hTimePt22")
@@ -429,7 +429,7 @@ def  chTimePtbinning(canvas):
     
     pad = TPad("pad", "Pad", 0, 0, 1, 1)
     pad.SetLeftMargin(0.2) 
-    c=TCanvas("chTimePtbinning","chTimePtbinning",800,500)
+    c=TCanvas("chTimePtbinning","chTimePtbinning",1600,1000)
     
     pad.Draw()
     pad.cd()
