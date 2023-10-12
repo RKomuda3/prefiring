@@ -398,7 +398,7 @@ def  chQualitybx0(canvas):
     
     pad = TPad("pad", "Pad", 0, 0, 1, 1)
     pad.SetLeftMargin(0.2)     
-    c=TCanvas("chQualitybx0","chQualitybx0",1400,800)
+    c=TCanvas("chQualitybx0","chQualitybx0",1600,1000)
     pad.Draw()
     pad.cd()
 
@@ -408,6 +408,7 @@ def  chQualitybx0(canvas):
     hQualitybx0.GetYaxis().SetBinLabel(2,"10 GeV $\\leq$ p_{t} $<$22 GeV")
     hQualitybx0.GetYaxis().SetBinLabel(3,"p_{t}$\\geq$22 GeV")
     hQualitybx0.Draw('BOX,TEXT')
+    hQualitybx0.GetYaxis().SetLabelSize(0.05)
     hQualitybx0.SetStats(0)
     
     pad.Update()
@@ -443,6 +444,8 @@ def  chTimePtbinning(canvas):
     hTimePtbinning.GetXaxis().SetBinLabel(1,"bx_{-1}")
     hTimePtbinning.SetTitle("OMTF")
     hTimePtbinning.GetXaxis().SetTitle("")
+    hTimePtbinning.GetXaxis().SetLabelSize(0.05)
+    hTimePtbinning.GetYaxis().SetLabelSize(0.05)
     hTimePtbinning.SetStats(0)
     hTimePtbinning.Draw('BOX,TEXT')
     
