@@ -182,7 +182,7 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
 
 //  std::cout<<"PRZERWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"<<std::endl;
 //  bool wasprefire=false;
-//  std::cout<<"HITYYYYYYYYYYYYYYYYYYYYYYYYYYY"<<std::endl;
+///  std::cout<<"HITYYYYYYYYYYYYYYYYYYYYYYYYYYY"<<std::endl;
 
   std::bitset<18>   checkDT(std::string("000000000000111111"));
   std::bitset<18> checkREST(std::string("111111111111000000"));
