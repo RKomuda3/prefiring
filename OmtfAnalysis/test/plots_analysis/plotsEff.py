@@ -56,7 +56,8 @@ def cEffEta(canvas):
 
   c.SetTickx()
   c.SetTicky()
-  frame = c.DrawFrame(-2.4, 0.5, 2.4, 1.02)
+  c.SetLogy()
+  frame = c.DrawFrame(-2.4, 0.0000001, 2.4, 1.02)
   frame.SetXTitle("eta")
   frame.SetYTitle("efficiency") 
   frame.SetStats(0)
@@ -66,12 +67,14 @@ def cEffEta(canvas):
   one.SetLineColor(1)
   one.DrawLine(-2.,1.,2.,1.)
   
-  legend = TLegend(-0.7, 0.51, 0.7, 0.69,"muon p_{T}^{reco} > 1.5*p_{T}L1, p_{T}L1=16GeV","")
+  legend = TLegend(-0.7, 0.1, 0.7, 0.8,"muon p_{T}^{reco} > 1.5*p_{T}L1, p_{T}L1=16GeV","")
   legend.SetName("lEffEta")
   canvas.Add(legend)
 
-  colors = [2,4,6,3] 
-  for index, opt in enumerate(['Bmtf','Omtf','Emtf','uGmt']) :
+  #colors = [2,4,6,3] 
+ # for index, opt in enumerate(['Bmtf','Omtf','Emtf','uGmt']) :
+  colors=[4]
+  for index, opt in enumerate(['Omtf']) :
     cut='16'
     color = colors[index]
     hn_D = gROOT.FindObject('hEff_EtaDenom'+cut)
@@ -93,12 +96,15 @@ def cEffPt(canvas, mtf):
   canvas.Add(c)
   c.Divide(3)
 
+ 
+
   for index, region in enumerate(['Barrel','Overlap','Endcap']):
     pad = c.cd(index+1)
     pad.SetTickx()
     pad.SetTicky()
     pad.SetLogx()
-#    pad.SetLogy()
+    pad.SetLogy()
+     
 
     hDenom = gROOT.FindObject('hEff_PtCutDenom_'+region[0:3])
     if (hDenom==None) :  continue
@@ -106,7 +112,7 @@ def cEffPt(canvas, mtf):
     frame.Reset()
     frame.SetStats(0)
     frame.SetMaximum(1.05)
-    frame.SetMinimum(0.)
+    frame.SetMinimum(1.E-8)
 #    frame.SetMinimum(1.e-5)
     frame.SetXTitle("muon p_{T}")
     frame.GetXaxis().SetTitleOffset(1.4)
@@ -116,6 +122,7 @@ def cEffPt(canvas, mtf):
     frame.GetXaxis().SetRange(6,37)
     frame.DrawCopy()
 
+
     one = TLine()
     one.SetLineStyle(2)
     one.SetLineColor(1)
@@ -123,7 +130,7 @@ def cEffPt(canvas, mtf):
 #   one.DrawLine(5.,1.,90.,1.)
 
 #   legend = TLegend(50, 0.05,690., 0.28,"","")
-    legend = TLegend(105, 0.05,390., 0.28,"","")
+    legend = TLegend(70, 0.01,390., 0.3,"","")
     legend.SetName("lEffPt"+region)
     canvas.Add(legend)
 
@@ -134,10 +141,11 @@ def cEffPt(canvas, mtf):
       if (hn==None) :  continue
       hn.Divide(hn,hDenom,1.,1.,'B')
       hn.SetLineColor(color)
-      hn.DrawCopy('same ][ e')  
+      hn.DrawCopy('same ][ e') 
       legend.AddEntry(hn,'p_{T}L1 #geq '+cut+" GeV ")
 
     legend.Draw()
+
 
   c.Update()
   return
@@ -231,7 +239,7 @@ def plotAll(canvas) :
 # cEffEtaOMTF(canvas)
 # cEffEtaAll(canvas)
   cEffPt(canvas,'Omtf')
-  cEffPt(canvas,'uGmt')
+#  cEffPt(canvas,'uGmt')
   cEffEta(canvas)
   return
 

@@ -48,6 +48,12 @@ namespace {
 
 /////////////////////////////////////moja praca
   TEfficiency *hTimePrefireEta;
+  TEfficiency *hTimePrefireEtaOMTF;
+  TEfficiency *hTimePrefireEtaBMTF;
+  TEfficiency *hTimePrefireEtaEMTF;
+  TEfficiency *hTimePrefireEta1OMTF;
+  TEfficiency *hTimePrefireEta1BMTF;
+  TEfficiency *hTimePrefireEta1EMTF;
   TEfficiency *hTimePrefireEta1;
   TEfficiency *hTimeEffPt1;
 
@@ -155,7 +161,13 @@ void AnaTime::init(TObjArray& histos)
 
 //////////////////////////////  /////////////////////////////////////// moja praca
   hTimePrefireEta = new TEfficiency("hTimePrefireEta","hTimePrefireEta; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta);
+  hTimePrefireEtaOMTF = new TEfficiency("hTimePrefireEtaOMTF","hTimePrefireEtaOMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEtaOMTF);
+  hTimePrefireEtaBMTF = new TEfficiency("hTimePrefireEtaBMTF","hTimePrefireEtaBMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEtaBMTF);
+  hTimePrefireEtaEMTF = new TEfficiency("hTimePrefireEtaEMTF","hTimePrefireEtaEMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEtaEMTF);
   hTimePrefireEta1 = new TEfficiency("hTimePrefireEta1","hTimePrefireEta1; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta1);
+  hTimePrefireEta1OMTF = new TEfficiency("hTimePrefireEta1OMTF","hTimePrefireEta1OMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta1OMTF);
+  hTimePrefireEta1BMTF = new TEfficiency("hTimePrefireEta1BMTF","hTimePrefireEta1BMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta1BMTF);
+  hTimePrefireEta1EMTF = new TEfficiency("hTimePrefireEta1EMTF","hTimePrefireEta1EMTF; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta1EMTF);
   hTimeEffPt1 = new TEfficiency("hTimeEffPt1 ","hTimeEffPt1 : ); L1 p_{T}; fraction",6,xbins); histos.Add(hTimeEffPt1 );
 
 
@@ -316,6 +328,9 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     }
     if(l1mtf.ptValue()>10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)) {
       hTimePrefireEta->Fill(checkprefire,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF) hTimePrefireEtaOMTF->Fill(checkprefire,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::BMTF) hTimePrefireEtaBMTF->Fill(checkprefire,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::EMTF) hTimePrefireEtaEMTF->Fill(checkprefire,l1mtf.etaValue());
 
     }
 
@@ -334,6 +349,9 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     if(l1mtf.ptValue()>10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)){
 
       hTimePrefireEta1->Fill(checkprefire1,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF) hTimePrefireEta1OMTF->Fill(checkprefire1,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::BMTF) hTimePrefireEta1BMTF->Fill(checkprefire1,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::EMTF) hTimePrefireEta1EMTF->Fill(checkprefire1,l1mtf.etaValue());
 
     }
 
