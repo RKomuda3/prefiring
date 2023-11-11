@@ -25,6 +25,7 @@ def cTimeLayers(canvas):
   canvas.Add(c)
 
   h=gROOT.FindObject("hTimeLayers")
+  h.SetTitle("Layers \, hit; ;counts")
   h.SetStats(0)
   h.SetMinimum(0.)
   h.DrawCopy()
@@ -32,8 +33,7 @@ def cTimeLayers(canvas):
   h.SetFillStyle(3345)
   h.GetXaxis().SetRange(1,6)
   h.DrawCopy('same')
-  h.SetTitle("Layers \, hit")
-  h.GetYaxis().SetTitle("Counts")
+
   
 
   h.SetFillColor(4)
@@ -44,7 +44,10 @@ def cTimeLayers(canvas):
   h.SetFillColor(8)
   h.SetFillStyle(3354)
   h.GetXaxis().SetRange(11,18)
+
   h.DrawCopy('same')
+
+
 
 #  line = TLine()
 #  line.SetLineColor(2)
@@ -672,7 +675,7 @@ def plotAll(canvas) :
 #  cTimeTrackPt(canvas)
 #  cTimeTrackBX(canvas)
 #  cTimeDeltaR(canvas)
-#   cTimeLayers(canvas)
+   cTimeLayers(canvas)
    cTimeEffPt(canvas)
 #  cTimeEta(canvas)
    chTimePrefireEta(canvas)
