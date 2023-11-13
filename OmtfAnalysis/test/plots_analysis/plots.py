@@ -48,5 +48,5 @@ for canva in canvas :
   pictName  = "fig_png/"+canva.GetName()+".png"
   canva.Print(pictName,'png')
 
-#token do githuba: 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
+
 

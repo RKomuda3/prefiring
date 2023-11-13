@@ -361,6 +361,41 @@ def chTimePrefireEtahitpattern(canvas):
     c.Update()
     return
 
+def chTimePrefireEtaFInal(canvas):
+    c=TCanvas("chTimePrefireEtaFInal","chTimePrefireEtaFInal",1400,800)
+    canvas.Add(c)
+    c.SetGridy(100)
+    c.SetGridx(100)
+    hhTimePrefireEta = gROOT.FindObject("hTimePrefireEta")
+    hhTimePrefireEta1 = gROOT.FindObject("hTimePrefireEta1")
+    hhTimePrefireEtahitpattern = gROOT.FindObject("hTimePrefireEtahitpattern")
+    hhTimePrefireEtafinal = gROOT.FindObject("hTimePrefireEtafinal")
+    hhTimePrefireEta.SetLineColor(1)
+    hhTimePrefireEta1.SetLineColor(2)
+    hhTimePrefireEtahitpattern.SetLineColor(3)
+    hhTimePrefireEtafinal.SetLineColor(4)
+    hhTimePrefireEta.SetTitle("Prefiring \, rate  \, for  \, p_{T} \geq \, 10 GeV; L1\eta [-]; bx-1/(bx-0 or bx-1)")
+    hhTimePrefireEta.Draw()
+    hhTimePrefireEta1.Draw("SAME")
+    hhTimePrefireEtahitpattern.Draw("SAME")
+    hhTimePrefireEtafinal.Draw("SAME")
+    
+
+    
+    c.Update()
+    graph = hhTimePrefireEta1.GetPaintedGraph()
+    graph.GetYaxis().SetNdivisions(808)
+    graph.GetXaxis().SetNdivisions(808)
+    graph.SetStats(1)
+    legend= TLegend(0.7, 0.7, 0.9, 0.9)
+    legend.AddEntry(hhTimePrefireEta,"Initial","l")
+    legend.AddEntry(hhTimePrefireEta1,"\Delta \phi veto","l")
+    legend.AddEntry(hhTimePrefireEtahitpattern,"Hit pattern veto","l")
+    legend.AddEntry(hhTimePrefireEtafinal,"Both","l")
+    legend.Draw()
+    c.Update()
+    return
+
 
 def cDeltaphieta(canvas):
   c = TCanvas("cDeltaphieta","cDeltaphieta",1300,400)
@@ -370,20 +405,26 @@ def cDeltaphieta(canvas):
   hDeltaphieta010 = gROOT.FindObject("hDeltaphieta010")
   hDeltaphieta010.SetTitle("OMTF \ between \, bx0 \, and \, bx-1 \ p_T<10 GeV; \Delta \eta; \Delta \phi ")
   hDeltaphieta010.SetStats(0)
+  hDeltaphieta010.GetYaxis().SetRangeUser(0.,3.14)
   hDeltaphieta010.Draw('BOX,TEXT')
+  hDeltaphieta010.SetMarkerSize(1.5)
   
   
   pad2 = c.cd(2)
   hDeltaphieta1022 = gROOT.FindObject("hDeltaphieta1022")
   hDeltaphieta1022.SetStats(0)
+  hDeltaphieta1022.GetYaxis().SetRangeUser(0.,3.14)
   hDeltaphieta1022.SetTitle("OMTF \ between \, bx0 \, and \, bx-1 \ 10 GeV \leq p_T<22 GeV; \Delta \eta; \Delta \phi ")
   hDeltaphieta1022.Draw('BOX,TEXT')
+  hDeltaphieta1022.SetMarkerSize(1.5)
   
   pad3 = c.cd(3)
   hDeltaphieta22inf = gROOT.FindObject("hDeltaphieta22inf")
   hDeltaphieta22inf.SetStats(0)
+  hDeltaphieta22inf.GetYaxis().SetRangeUser(0.,3.14)
   hDeltaphieta22inf.SetTitle("OMTF \ between \, bx0 \, and \, bx-1 \ p_T \geq 22 GeV ; \Delta \eta; \Delta \phi ")
   hDeltaphieta22inf.Draw('BOX,TEXT')
+  hDeltaphieta22inf.SetMarkerSize(1.5)
   
   c.Update()
   return 
@@ -398,12 +439,14 @@ def cDeltaphieta025(canvas):
   hDeltaphieta010_025.SetStats(0)
 
   hDeltaphieta010_025.DrawCopy('BOX,TEXT')
+  hDeltaphieta010_025.SetMarkerSize(1.5)
   
   pad2 = c.cd(2)
   hDeltaphieta1022_025 = gROOT.FindObject("hDeltaphieta1022_025")
   hDeltaphieta1022_025.SetTitle("OMTF \ between \, bx0 \, and \, bx-1 \ 10 GeV \leq p_T<22 GeV; \Delta \eta; \Delta \phi ")
   hDeltaphieta1022_025.SetStats(0)
   hDeltaphieta1022_025.Draw('BOX,TEXT')
+  hDeltaphieta1022_025.SetMarkerSize(1.5)
 
   
   pad3 = c.cd(3)
@@ -411,6 +454,7 @@ def cDeltaphieta025(canvas):
   hDeltaphieta22inf_025.SetTitle("OMTF \ between \, bx0 \, and \, bx-1 \ p_T \geq 22 GeV; \Delta \eta; \Delta \phi ")
   hDeltaphieta22inf_025.SetStats(0)
   hDeltaphieta22inf_025.DrawCopy('BOX,TEXT')
+  hDeltaphieta22inf_025.SetMarkerSize(1.5)
 
   
   c.Update()
@@ -433,6 +477,7 @@ def  chQualitybx0(canvas):
     hQualitybx0.Draw('BOX,TEXT')
     hQualitybx0.GetYaxis().SetLabelSize(0.05)
     hQualitybx0.SetStats(0)
+    hQualitybx0.SetMarkerSize(1.5)
     
     pad.Update()
 
@@ -471,6 +516,8 @@ def  chTimePtbinning(canvas):
     hTimePtbinning.GetYaxis().SetLabelSize(0.05)
     hTimePtbinning.SetStats(0)
     hTimePtbinning.Draw('BOX,TEXT')
+    hTimePtbinning.SetMarkerSize(1.5);
+    
     
     c.Update()
     c.SetLeftMargin(0.8)
@@ -500,6 +547,7 @@ def  chTimePtbinninghitpattern(canvas):
     hTimePtbinning.GetYaxis().SetLabelSize(0.05)
     hTimePtbinning.SetStats(0)
     hTimePtbinning.Draw('BOX,TEXT')
+    hTimePtbinning.SetMarkerSize(1.5);
     
     c.Update()
     c.SetLeftMargin(0.8)
@@ -690,6 +738,7 @@ def plotAll(canvas) :
    cTimeEffPt1(canvas)
    chTimePrefireEta1divide(canvas)
    chTimePrefireEtadivide(canvas)
+   chTimePrefireEtaFInal(canvas)
    return
 
 
