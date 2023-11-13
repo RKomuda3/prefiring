@@ -176,8 +176,8 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
   BestL1Obj bestOMTF; bestOMTF.type=typeOMTF;
   BestL1Obj bestEMTF; bestEMTF.type=typeEMTF;
 //  std::vector<L1Obj> l1s = l1Coll->selectByBx(0,0);
-  std::vector<L1Obj> l1s0 = l1Coll->selectByBx(-1,-1);
-  std::vector<L1Obj> l1s1 = l1Coll->selectByBx(0,0);
+  std::vector<L1Obj> l1s0 = l1Coll->selectByBx(0,0);
+  std::vector<L1Obj> l1s1 = l1Coll->selectByBx(1,1);
   std::vector<L1Obj> l1s ;
 
 //  std::cout<<"PRZERWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"<<std::endl;
@@ -204,9 +204,9 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
 //         std::cout<<"??????????????????????????????????????????????????????????????????????????"<<std::endl;
 
          if(l10checkDT.count()>0 && l10checkREST.count()==0){
-             if(l11checkDT.count()>0 && l11checkREST.count()>0) std::cout<<"";
+             if(l11checkDT.count()>0 && l11checkREST.count()>0)checkprefire=true;
          }
-           checkprefire=true;
+
 //         wasprefire=true;
        }
     }
