@@ -387,7 +387,10 @@ def chTimePrefireEtaFInal(canvas):
     graph.GetYaxis().SetNdivisions(808)
     graph.GetXaxis().SetNdivisions(808)
     graph.SetStats(1)
+
+    c.Update()
     legend= TLegend(0.7, 0.7, 0.9, 0.9)
+    canvas.Add(legend)
     legend.AddEntry(hhTimePrefireEta,"Initial","l")
     legend.AddEntry(hhTimePrefireEta1,"\Delta \phi veto","l")
     legend.AddEntry(hhTimePrefireEtahitpattern,"Hit pattern veto","l")
