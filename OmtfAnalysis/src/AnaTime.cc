@@ -333,7 +333,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     if(qualOK && l1mtf.bx==-1){
       checkprefire=true;
     }
-    if(l1mtf.ptValue()>10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)) {
+    if(qualOK && matched && l1mtf.ptValue()>=10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)) {
       hTimePrefireEta->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::OMTF) hTimePrefireEtaOMTF->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::BMTF) hTimePrefireEtaBMTF->Fill(checkprefire,l1mtf.etaValue());
@@ -369,7 +369,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
         if(l10checkDT.count()>0 && l10checkREST.count()==0 && l11checkDT.count()>0 && l11checkREST.count()>0)checkprefirefinal=false;
       }
     }
-    if(l1mtf.ptValue()>10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)){
+    if(qualOK && matched && l1mtf.ptValue()>=10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)){
 
       hTimePrefireEta1->Fill(checkprefire1,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::OMTF) hTimePrefireEta1OMTF->Fill(checkprefire1,l1mtf.etaValue());

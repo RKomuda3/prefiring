@@ -149,7 +149,7 @@ def cEffPt(canvas, mtf):
 
   c.Update()
   return
-#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
+#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
 def cEffRunAver(canvas):
   c = TCanvas('cEffRunAver','cEffHistory',1200,600)
 #  gStyle.SetOptStat(10)
