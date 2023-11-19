@@ -176,27 +176,27 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
   BestL1Obj bestOMTF; bestOMTF.type=typeOMTF;
   BestL1Obj bestEMTF; bestEMTF.type=typeEMTF;
 //  std::vector<L1Obj> l1s = l1Coll->selectByBx(0,0);
-  std::vector<L1Obj> l1s0 = l1Coll->selectByBx(0,0);
-  std::vector<L1Obj> l1s1 = l1Coll->selectByBx(1,1);
+
+ ///////////////////////////////////////////////////////////////////MY WORK
+  std::vector<L1Obj> l1s0 = l1Coll->selectByBx(0,0);//Selection of objects from bx0
+  std::vector<L1Obj> l1s1 = l1Coll->selectByBx(1,1);//Selection of objects from bx1
   std::vector<L1Obj> l1s ;
 
-//  std::cout<<"PRZERWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"<<std::endl;
-//  bool wasprefire=false;
-///  std::cout<<"HITYYYYYYYYYYYYYYYYYYYYYYYYYYY"<<std::endl;
 
-  std::bitset<18>   checkDT(std::string("000000000000111111"));
-  std::bitset<18> checkREST(std::string("111111111111000000"));
+  std::bitset<18>   checkDT(std::string("000000000000111111"));//Checking if object has only DT hits
+  std::bitset<18> checkREST(std::string("111111111111000000"));//Checking if object has only hits other than DT
   for (const auto & l10 : l1s0) {
     bool checkprefire=false;
     std::bitset<18> l10bit(l10.hits);
-    std::bitset<18> l10checkDT=(checkDT & l10bit);
-    std::bitset<18> l10checkREST=(checkREST & l10bit);
+    std::bitset<18> l10checkDT=(checkDT & l10bit);//Checking if object from bx0 has only DT hits
+    std::bitset<18> l10checkREST=(checkREST & l10bit);//Checking if object from bx0 has only hits other than DT
 
     for (const auto & l11 : l1s1) {
        std::bitset<18> l11bit(l11.hits);
-       std::bitset<18> l11checkDT=(checkDT & l11bit);
-       std::bitset<18> l11checkREST=(checkREST & l11bit);
+       std::bitset<18> l11checkDT=(checkDT & l11bit);//Checking if object from bx1 has only DT hits.
+       std::bitset<18> l11checkREST=(checkREST & l11bit);//Checking if object from bx1 has only hits other than DT
        if(l10.q >= 12 && l10.type==L1Obj::OMTF && l11.type==L1Obj::OMTF && l10.position==l11.position && l10.iProcessor==l11.iProcessor  && (std::abs(reco::deltaPhi(l10.phiValue(),l11.phiValue()))<0.09)){
+           //Upper if is a condition for dphi,same board and bx0 object quality.
 //         std::cout<<"//////////////////////////////////////////////////////////////////////////"<<std::endl;
 //         std::cout<<l10<<std::endl;
 //         std::cout<<"??????????????????????????????????????????????????????????????????????????"<<std::endl;
@@ -204,7 +204,7 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
 //         std::cout<<"??????????????????????????????????????????????????????????????????????????"<<std::endl;
 
          if(l10checkDT.count()>0 && l10checkREST.count()==0){
-             if(l11checkDT.count()>0 && l11checkREST.count()>0)checkprefire=true;
+             if(l11checkDT.count()>0 && l11checkREST.count()>0)checkprefire=true;//Selecting only objects with required hit pattern.
          }
 
 //         wasprefire=true;
@@ -213,21 +213,12 @@ void AnaEff::run(  const EventObj* event, const MuonObj* muon, const L1ObjColl *
 //    std::cout<<"H/////////////////////////////"<<std::endl;
 //    std::cout<<l10.hits<<std::endl;
 //    std::cout<<"K/////////////////////////////"<<std::endl;
-    if(checkprefire==true) l1s.push_back(l10);
+    if(checkprefire==true) l1s.push_back(l10);//Vector with selected objects.
 
   }
-//  std::cout<<"KONIECHITOOOOOOOOOOOOOOOOOOOOW"<<std::endl;
-//    if(wasprefire){
-//      std::cout<<"POCZAAAAAAAATEEEEEEKKKKKK"<<std::endl;
-//      if (muon && l1Coll ) std::cout <<*event << std::endl << *muon<< std::endl<<*l1Coll<<std::endl<<std::endl;
-//      std::cout<<"PRZERWAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"<<std::endl;
-//      for(const auto &ls :l1ss){
-//        std::cout<<ls<<std::endl;
-//
-//      }
-//      std::cout<<"Koooooooooooooooooooooooooooooooooooooooooooooooooooniec"<<std::endl;
-//    }
 
+
+////////////////////////////////////////////////////// END OF MY WORK
 
 
   for (const auto & l1 : l1s) {

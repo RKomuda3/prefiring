@@ -46,7 +46,7 @@ namespace {
   TEfficiency *hTimeEta_Pt0, *hTimeEta_Pt10, *hTimeEta_Pt22;
 
 
-/////////////////////////////////////moja praca
+/////////////////////////////////////my work
   TEfficiency *hTimePrefireEta;
   TEfficiency *hTimePrefireEtaOMTF;
   TEfficiency *hTimePrefireEtaBMTF;
@@ -162,7 +162,7 @@ void AnaTime::init(TObjArray& histos)
   hTimeEta_Pt10 = new TEfficiency("hTimeEta_Pt10","hTimeEta_Pt10",13,etas); histos.Add(hTimeEta_Pt10);
   hTimeEta_Pt22 = new TEfficiency("hTimeEta_Pt22","hTimeEta_Pt22",13,etas); histos.Add(hTimeEta_Pt22);
 
-//////////////////////////////  /////////////////////////////////////// moja praca
+//////////////////////////////  /////////////////////////////////////// my work
 
   hTimePrefireEta = new TEfficiency("hTimePrefireEta","hTimePrefireEta; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEta);
   hTimePrefireEtafinal = new TEfficiency("hTimePrefireEtafinal","hTimePrefireEtafinal; #eta ;p",50,-2.5,2.5); histos.Add(hTimePrefireEtafinal);
@@ -240,9 +240,9 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 //
 
 
-  std::bitset<18>   checkDT(std::string("000000000000111111"));
-  std::bitset<18> checkREST(std::string("111111111111000000"));
-  L1Obj omtfBXm1;
+  std::bitset<18>   checkDT(std::string("000000000000111111"));//Checking if object has only DT hits
+  std::bitset<18> checkREST(std::string("111111111111000000"));//Checking if object has only hits other than DT
+  L1Obj omtfBXm1;//looking for object from bx-1
   bool omtfBXm1b=false;
   for (const auto & l1mtf : l1mtfs) {
     bool matched  = false;
@@ -289,7 +289,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     TH1D *hA, *hQ, *hM, *hQM, *hW, *hQW; 
     hA=hQ=hM=hQM=hW=hQW=0; 
     TEfficiency * hE=0;
-    TEfficiency * hE1=0;
+    TEfficiency * hE1=0;//My work
     switch (l1mtf.type) {
         case (L1Obj::BMTF) : hA=hTimeBmtf_A; hQ=hTimeBmtf_Q; hM=hTimeBmtf_M;  hQM=hTimeBmtf_QM;  hW=hTimeBmtf_W;  hQW=hTimeBmtf_QW; hE=hTimeEffPt_BMTF; hE1=hTimeEffPt1_BMTF; break;
         case (L1Obj::EMTF) : hA=hTimeEmtf_A; hQ=hTimeEmtf_Q; hM=hTimeEmtf_M;  hQM=hTimeEmtf_QM;  hW=hTimeEmtf_W;  hQW=hTimeEmtf_QW; hE=hTimeEffPt_EMTF; hE1=hTimeEffPt1_EMTF; break;
@@ -307,12 +307,11 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     }
 //  bool pref = (l1mtf.bx == -1 || l1mtf.bx == -2);
     bool pref = (l1mtf.bx == -1);
-    bool pref1 = (l1mtf.bx == -1);
+    bool pref1 = (l1mtf.bx == -1);//My work
     if (qualOK && matched && (pref || l1mtf.bx == 0)) {
       for(const auto & l1mtf2 : l1mtfs){
         if(l1mtf2.bx==0 && l1mtf2.type==L1Obj::OMTF && l1mtf.type==L1Obj::OMTF && l1mtf.position==l1mtf2.position && l1mtf.iProcessor==l1mtf2.iProcessor && (std::abs(reco::deltaPhi(l1mtf.phiValue(),l1mtf2.phiValue()))<0.09)){
-            pref1=false;
-         //   std::cout<<"CZEMU TU WCHODZISZ"<<std::endl;
+            pref1=false; //This is the loop for veto fraction dependent on p_T
         }
       }
       double ptValue = l1mtf.ptValue()> 25. ? 25. : l1mtf.ptValue();
@@ -329,7 +328,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
       }
     }
 
-    bool checkprefire=false;
+    bool checkprefire=false;//My work- checking if an event is from bx-1=prefired object.
     if(qualOK && l1mtf.bx==-1){
       checkprefire=true;
     }
@@ -338,35 +337,36 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
       if(l1mtf.type==L1Obj::OMTF) hTimePrefireEtaOMTF->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::BMTF) hTimePrefireEtaBMTF->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::EMTF) hTimePrefireEtaEMTF->Fill(checkprefire,l1mtf.etaValue());
+      //In this if we have only prefiring fraction without a veto.
 
     }
 
-    bool checkprefirehitpattern=false;
-    bool checkprefire1=false;
-    bool checkprefirefinal=false;
+    bool checkprefirehitpattern=false;//Only hit pattern veto
+    bool checkprefire1=false;//Only dphi veto
+    bool checkprefirefinal=false;//Both vetos
     std::bitset<18> l10bit(l1mtf.hits);
-    std::bitset<18> l10checkDT=(checkDT & l10bit);
-    std::bitset<18> l10checkREST=(checkREST & l10bit);
+    std::bitset<18> l10checkDT=(checkDT & l10bit);//Checking if object from bx-1 has only DT hits
+    std::bitset<18> l10checkREST=(checkREST & l10bit);//Checking if object from bx-1 has only hits other than DT
     if(qualOK && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)  && l1mtf.bx==-1){
       checkprefire1=true;
       checkprefirehitpattern=true;
       checkprefirefinal=true;
-    //  std::cout<<"CZEMU TU  nieeeeeee WCHODZISZ"<<std::endl;
+    // This if only checks if object is prefired.
     }
     for(const auto & l1mtf2 : l1mtfs){
       std::bitset<18> l11bit(l1mtf2.hits);
-      std::bitset<18> l11checkDT=(checkDT & l11bit);
-      std::bitset<18> l11checkREST=(checkREST & l11bit);
+      std::bitset<18> l11checkDT=(checkDT & l11bit);//Checking if object from bx0 has only DT hits
+      std::bitset<18> l11checkREST=(checkREST & l11bit);//Checking if object from bx0 has only hits other than DT
       if(l1mtf2.bx==0 && l1mtf2.type==L1Obj::OMTF && l1mtf.type==L1Obj::OMTF && l1mtf.position==l1mtf2.position && l1mtf.iProcessor==l1mtf2.iProcessor && (std::abs(reco::deltaPhi(l1mtf.phiValue(),l1mtf2.phiValue()))<0.09)){
           checkprefire1=false;
 
-       //   std::cout<<"CZEMU TU WCHODZISZ"<<std::endl;
+       //Applying dphi veto.
       }
       if(l1mtf2.bx==0 && l1mtf2.type==L1Obj::OMTF && l1mtf.type==L1Obj::OMTF && l1mtf.position==l1mtf2.position && l1mtf.iProcessor==l1mtf2.iProcessor){
-        if(l10checkDT.count()>0 && l10checkREST.count()==0 && l11checkDT.count()>0 && l11checkREST.count()>0)checkprefirehitpattern=false;
+        if(l10checkDT.count()>0 && l10checkREST.count()==0 && l11checkDT.count()>0 && l11checkREST.count()>0)checkprefirehitpattern=false;//Applying hit pattern veto.
       }
       if(l1mtf2.bx==0 && l1mtf2.type==L1Obj::OMTF && l1mtf.type==L1Obj::OMTF && l1mtf.position==l1mtf2.position && l1mtf.iProcessor==l1mtf2.iProcessor && (std::abs(reco::deltaPhi(l1mtf.phiValue(),l1mtf2.phiValue()))<0.09)){
-        if(l10checkDT.count()>0 && l10checkREST.count()==0 && l11checkDT.count()>0 && l11checkREST.count()>0)checkprefirefinal=false;
+        if(l10checkDT.count()>0 && l10checkREST.count()==0 && l11checkDT.count()>0 && l11checkREST.count()>0)checkprefirefinal=false;//Applying both vetos.
       }
     }
     if(qualOK && matched && l1mtf.ptValue()>=10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)){
@@ -377,12 +377,13 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
       if(l1mtf.type==L1Obj::EMTF) hTimePrefireEta1EMTF->Fill(checkprefire1,l1mtf.etaValue());
       hTimePrefireEtahitpattern->Fill(checkprefirehitpattern,l1mtf.etaValue());
       hTimePrefireEtafinal->Fill(checkprefirefinal,l1mtf.etaValue());
+      //Filling histograms after vetos.
 
     }
 
 
 
-
+//Some debuging.
 //    if(checkprefire1!=checkprefire3 && std::abs(l1mtf.etaValue())>1.0 && std::abs(l1mtf.etaValue())<1.1){
 //
 //              std::cout<<"???????????????????????????????????????????????????????????????"<<std::endl;
@@ -400,7 +401,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 
 
 
-
+//Deltaphi vs deltaEta histograms
 //   int counter=0;
    for(const auto & l1mtf2 : l1mtfs){
      double deltaphi=0;
@@ -441,6 +442,10 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 //       }
    }
    }
+
+//End of Deltaphi vs deltaEta histograms
+
+//Looking for an object from bx-1.
    L1Obj tmp;
    if(l1mtf.q>=12 && l1mtf.bx==-1 && l1mtf.type==L1Obj::OMTF){
      tmp=l1mtf;
@@ -450,7 +455,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
      omtfBXm1b=true;
    }
 
-
+//Some debuging
 //    if(qualOK && l1mtf.ptValue()> 22 && (l1mtf.bx==-1)){
 //
 //        std::cout<<"Tutaj jest event"<<std::endl;
@@ -470,7 +475,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 
   }
 
-
+//Looking for an object at bx0 from the same event as omtfBXm1
   L1Obj omtfBX0;
   bool omtfBX0b=false;
   for (const auto & l1mtf2 : l1mtfs){
@@ -484,14 +489,17 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     if(omtfBXm1.ptValue()<10) hTimePtbinning->Fill(0.,0.);
     if(omtfBXm1.ptValue()>=10 && omtfBXm1.ptValue()<22) hTimePtbinning->Fill(0.,1.);
     if(omtfBXm1.ptValue()>=22) hTimePtbinning->Fill(0.,2.);
+    //Only objects from bx-1 found in event.
 
   }
   if(omtfBXm1b==1 && omtfBX0b==1 && omtfBXm1.position==omtfBX0.position && omtfBXm1.iProcessor==omtfBX0.iProcessor){
     if(omtfBXm1.ptValue()<10) hTimePtbinning->Fill(1.,0.);
     if(omtfBXm1.ptValue()>=10 && omtfBXm1.ptValue()<22) hTimePtbinning->Fill(1.,1.);
     if(omtfBXm1.ptValue()>=22) hTimePtbinning->Fill(1.,2.);
+    //Objects found at bx-1 and bx0
   }
 
+ //Below the same thing as above but this time objects have to have required hit patterns.
   std::bitset<18> l10bit(omtfBXm1.hits);
   std::bitset<18> l10checkDT=(checkDT & l10bit);
   std::bitset<18> l10checkREST=(checkREST & l10bit);
@@ -512,7 +520,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     }
   }
 
-
+///////End of my work.
   //
   // coincidence between triggers.
   //
@@ -562,5 +570,5 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 //  }
 //  if (ev) { std::cout <<"Tu jest EventObj: "<< *ev << std::endl;
 //  std::cout<<"/////////////////////"<<std::endl;
-//  }
+//  }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
 }

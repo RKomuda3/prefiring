@@ -308,7 +308,7 @@ def cTimeEta(canvas) :
   return 
   
   
-####################################moja praca  
+#################################### MY WORK 
   
 def chTimePrefireEta(canvas):
     c=TCanvas("chTimePrefireEta","chTimePrefireEta",1400,800)
@@ -326,6 +326,7 @@ def chTimePrefireEta(canvas):
     graph.SetStats(1)
     c.Update()
     return
+
 
 def chTimePrefireEta1(canvas):
     c=TCanvas("chTimePrefireEta1","chTimePrefireEta1",1400,800)
