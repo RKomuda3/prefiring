@@ -570,5 +570,5 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
 //  }
 //  if (ev) { std::cout <<"Tu jest EventObj: "<< *ev << std::endl;
 //  std::cout<<"/////////////////////"<<std::endl;
-//  }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
+//  }
 }
