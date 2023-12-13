@@ -376,6 +376,7 @@ def chTimePrefireEtaFInal(canvas):
     hhTimePrefireEtahitpattern.SetLineColor(3)
     hhTimePrefireEtafinal.SetLineColor(4)
 
+
     hhTimePrefireEta.SetMarkerStyle(0)
     hhTimePrefireEta.SetMarkerColor(1)
     hhTimePrefireEta1.SetMarkerStyle(20)
@@ -394,8 +395,9 @@ def chTimePrefireEtaFInal(canvas):
 
     
     c.Update()
-    graph = hhTimePrefireEta1.GetPaintedGraph()
+    graph = hhTimePrefireEta.GetPaintedGraph()
     graph.GetYaxis().SetNdivisions(808)
+    graph.GetYaxis().SetRangeUser(0,0.003)
     graph.GetXaxis().SetNdivisions(808)
     graph.SetStats(1)
 

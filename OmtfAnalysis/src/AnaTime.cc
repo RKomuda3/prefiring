@@ -333,7 +333,7 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
       checkprefire=true;
     }
     if(qualOK && matched && l1mtf.ptValue()>=10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)) {
-      hTimePrefireEta->Fill(checkprefire,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF)hTimePrefireEta->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::OMTF) hTimePrefireEtaOMTF->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::BMTF) hTimePrefireEtaBMTF->Fill(checkprefire,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::EMTF) hTimePrefireEtaEMTF->Fill(checkprefire,l1mtf.etaValue());
@@ -371,12 +371,12 @@ void AnaTime::run(const EventObj* ev, const MuonObjColl *muonColl, const TrackOb
     }
     if(qualOK && matched && l1mtf.ptValue()>=10 && (l1mtf.type==L1Obj::OMTF || l1mtf.type==L1Obj::BMTF || l1mtf.type==L1Obj::EMTF)){
 
-      hTimePrefireEta1->Fill(checkprefire1,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF)hTimePrefireEta1->Fill(checkprefire1,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::OMTF) hTimePrefireEta1OMTF->Fill(checkprefire1,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::BMTF) hTimePrefireEta1BMTF->Fill(checkprefire1,l1mtf.etaValue());
       if(l1mtf.type==L1Obj::EMTF) hTimePrefireEta1EMTF->Fill(checkprefire1,l1mtf.etaValue());
-      hTimePrefireEtahitpattern->Fill(checkprefirehitpattern,l1mtf.etaValue());
-      hTimePrefireEtafinal->Fill(checkprefirefinal,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF)hTimePrefireEtahitpattern->Fill(checkprefirehitpattern,l1mtf.etaValue());
+      if(l1mtf.type==L1Obj::OMTF)hTimePrefireEtafinal->Fill(checkprefirefinal,l1mtf.etaValue());
       //Filling histograms after vetos.
 
     }
